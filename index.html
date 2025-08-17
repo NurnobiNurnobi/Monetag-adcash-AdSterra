@@ -1,132 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Optimized Combined Ad Page</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Combined Auto Ad Page</title>
 <style>
-    body { font-family: sans-serif; background: #f3f4f6; text-align: center; padding: 20px; margin:0; }
-    .container { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 420px; margin: 20px auto; }
-    h2 { margin-bottom: 20px; }
-    button { width: 100%; padding: 15px; margin: 10px 0; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; color: white; }
-    #autoBtn { background: #2563eb; }
-    #stopBtn { background: linear-gradient(to right, #ff416c, #ff4b2b); }
-    #timer { font-size: 18px; margin-top: 15px; display: none; }
-    .ad-block { margin: 20px auto; }
+  body {
+    font-family: sans-serif;
+    background: #f3f4f6;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+  }
+  .container {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    max-width: 420px;
+    margin: 20px auto;
+  }
+  h2 { margin-bottom: 20px; }
+  button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+  }
+  #autoBtn { background: #2563eb; }
+  #stopBtn { background: linear-gradient(to right, #ff416c, #ff4b2b); }
+  #timer { font-size: 18px; margin-top: 15px; display: none; }
+  .ad-block { margin: 20px auto; }
 </style>
-<script src="//acscdn.com/script/aclib.js"></script>
+
+<!-- Adcash Library -->
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+<!-- GigaPub Library -->
+<script src="https://ad.gigapub.tech/script?id=1432"></script>
 </head>
 <body>
 
-<div class="container">
-    <h2>Auto Ad System</h2>
-    <button id="autoBtn" onclick="startAutoRefresh()">Auto Ads</button>
-    <button id="stopBtn" onclick="stopAutoRefresh()">Stop Auto Ads</button>
-    <div id="timer">Next refresh in <span id="count">30</span>s</div>
-</div>
-
-<!-- ================= AdCash Ads ================= -->
-<div class="ad-block" id="adcash-container">
-<script>
+<!-- Adcash 728x90 Banner -->
+<div class="ad-block">
+  <script type="text/javascript">
     aclib.runBanner({ zoneId: '10289610' });
-    aclib.runInPagePush({ zoneId: '10289602', maxAds: 2 });
-    aclib.runInterstitial({ zoneId: '10289594' });
-    aclib.runPop({ zoneId: '10289582' });
-    aclib.runAutoTag({ zoneId: '12mpnwugda' });
-</script>
+  </script>
 </div>
 
-<!-- ================= AdSterra Ads ================= -->
+<!-- AdSterra 728x90 Banner -->
 <div class="ad-block">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : 'ef8217b410d73f26bf4e93118b120b81',
+      'format' : 'iframe',
+      'height' : 90,
+      'width' : 728,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/ef8217b410d73f26bf4e93118b120b81/invoke.js"></script>
+</div>
+
+<div class="container">
+  <h2>Auto Ad System</h2>
+  <button id="autoBtn" onclick="startAutoRefresh()">Auto Ads</button>
+  <button id="stopBtn" onclick="stopAutoRefresh()">Stop Auto Ads</button>
+  <div id="timer">Next refresh in <span id="count">30</span>s</div>
+
+  <!-- Adcash Native -->
+  <div id="awn" class="ad-block"></div>
+
+  <!-- AdSterra Native Banner -->
+  <div class="ad-block">
+    <script async="async" data-cfasync="false" src="//pl27428609.profitableratecpm.com/6f9bda2ab226eb49663e7663da59ee81/invoke.js"></script>
+    <div id="container-6f9bda2ab226eb49663e7663da59ee81"></div>
+  </div>
+</div>
+
+<!-- Adcash 160x600 Banner -->
+<div class="ad-block">
+  <script type="text/javascript">
+    aclib.runBanner({ zoneId: '10289610' });
+  </script>
+</div>
+
+<!-- AdSterra 468x60 Banner -->
+<div class="ad-block">
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '4581e2ba3d80dd56fa8f5e9c719e8e69',
+      'format' : 'iframe',
+      'height' : 60,
+      'width' : 468,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/4581e2ba3d80dd56fa8f5e9c719e8e69/invoke.js"></script>
+</div>
+
+<!-- Adcash In-Page Push -->
 <script type="text/javascript">
-    atOptions = { 'key':'ef8217b410d73f26bf4e93118b120b81','format':'iframe','height':90,'width':728,'params':{} };
-    document.write('<scr'+'ipt type="text/javascript" src="//www.highperformanceformat.com/ef8217b410d73f26bf4e93118b120b81/invoke.js"></scr'+'ipt>');
+  aclib.runInPagePush({ zoneId: '10289602', maxAds: 2 });
 </script>
-</div>
 
-<div class="ad-block">
+<!-- Adcash Pop-under -->
 <script type="text/javascript">
-    atOptions = { 'key':'4581e2ba3d80dd56fa8f5e9c719e8e69','format':'iframe','height':60,'width':468,'params':{} };
-    document.write('<scr'+'ipt type="text/javascript" src="//www.highperformanceformat.com/4581e2ba3d80dd56fa8f5e9c719e8e69/invoke.js"></scr'+'ipt>');
+  aclib.runPop({ zoneId: '10289582' });
 </script>
-</div>
 
-<div class="ad-block">
+<!-- Adcash Interstitial -->
 <script type="text/javascript">
-    atOptions = { 'key':'3988852ddc2607499411d12416076938','format':'iframe','height':50,'width':320,'params':{} };
-    document.write('<scr'+'ipt type="text/javascript" src="//www.highperformanceformat.com/3988852ddc2607499411d12416076938/invoke.js"></scr'+'ipt>');
+  aclib.runInterstitial({ zoneId: '10289594' });
 </script>
-</div>
 
-<!-- ================= Profitableratecpm ================= -->
+<!-- AdSterra Extra Ads -->
+<script type='text/javascript' src='//pl23792026.profitableratecpm.com/1d/75/fe/1d75feb3114e5cbcb7ef58817c3daf09.js'></script>
+<script type='text/javascript' src='//pl23792003.profitableratecpm.com/ac/f5/22/acf5224742b437f1b5583daa1d967138.js'></script>
+
+<!-- AdSterra 320x50 Banner -->
 <div class="ad-block">
-<script async src="//pl27428609.profitableratecpm.com/6f9bda2ab226eb49663e7663da59ee81/invoke.js"></script>
-<div id="container-6f9bda2ab226eb49663e7663da59ee81"></div>
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '3988852ddc2607499411d12416076938',
+      'format' : 'iframe',
+      'height' : 50,
+      'width' : 320,
+      'params' : {}
+    };
+  </script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/3988852ddc2607499411d12416076938/invoke.js"></script>
 </div>
 
-<!-- ================= Auto Refresh Script ================= -->
+<!-- GigaPub Container (optional, hidden) -->
+<div id="gigapub-container" class="ad-block" style="display:none;"></div>
+
 <script>
-let refreshActive = false;
-let countdown = 30;
-let timerInterval;
+  let refreshActive = false;
+  let countdown = 30;
+  let timerInterval;
+  let gigaTimeout;
+  let gigaActive = false;
 
-function startAutoRefresh(){
-    if(refreshActive) return;
+  function startAutoRefresh() {
+    if (refreshActive) return;
     refreshActive = true;
-    document.getElementById("timer").style.display="block";
-    countdown=30;
-    document.getElementById("count").textContent=countdown;
-    timerInterval=setInterval(()=>{
-        countdown--;
-        document.getElementById("count").textContent=countdown;
-        if(countdown<=0){
-            clearInterval(timerInterval);
-            location.reload();
-        }
-    },1000);
-}
+    document.getElementById("timer").style.display = "block";
+    countdown = 30;
+    document.getElementById("count").textContent = countdown;
 
-function stopAutoRefresh(){
-    refreshActive=false;
-    clearInterval(timerInterval);
-    document.getElementById("timer").style.display="none";
-}
-
-window.onload = function(){
-    if(document.referrer.includes(window.location.hostname)){
-        startAutoRefresh();
-    }
-}
-</script>
-
-<!-- ================= GigaPub Auto Ads ================= -->
-<div class="ad-block" id="giga-container"></div>
-<script src="https://ad.gigapub.tech/script?id=1432"></script>
-<script>
-function showGigaAd(){
-    const container = document.getElementById("giga-container");
-    if(container && window.showGiga){
-        container.innerHTML = '';
-        window.showGiga({container: container})
-        .then(adInstance => {
-            setTimeout(() => {
-                container.innerHTML = '';
-                if(adInstance && adInstance.close) adInstance.close();
-            }, 5000);
+    // GigaPub 15 সেকেন্ড পরে অটো চালু হবে
+    gigaTimeout = setTimeout(() => {
+      gigaActive = true;
+      window.showGiga()
+        .then(() => {
+          console.log("GigaPub Ad shown successfully.");
         })
-        .catch(e => console.error("GigaPub error:", e));
-    }
-}
-
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        showGigaAd();
-        setInterval(showGigaAd, 15000);
+        .catch(e => {
+          console.error("GigaPub error:", e);
+        });
     }, 15000);
-});
-</script>
 
-<script async src='//pl23792003.profitableratecpm.com/ac/f5/22/acf5224742b437f1b5583daa1d967138.js'></script>
+    timerInterval = setInterval(() => {
+      countdown--;
+      document.getElementById("count").textContent = countdown;
+
+      if (countdown <= 0) {
+        clearInterval(timerInterval);
+        location.reload(); // Auto refresh
+      }
+    }, 1000);
+  }
+
+  function stopAutoRefresh() {
+    refreshActive = false;
+    clearInterval(timerInterval);
+    clearTimeout(gigaTimeout); // GigaPub timer বন্ধ
+    document.getElementById("timer").style.display = "none";
+    gigaActive = false;
+  }
+
+  // Auto restart if coming from same site (after reload)
+  window.onload = function () {
+    if (document.referrer.includes(window.location.hostname)) {
+      startAutoRefresh();
+    }
+  }
+</script>
 
 </body>
 </html>
