@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Optimized Combined Ad Page</title>
@@ -15,8 +14,10 @@
     #timer { font-size: 18px; margin-top: 15px; display: none; }
     .ad-block { margin: 20px auto; }
 </style>
+<script src="//acscdn.com/script/aclib.js"></script>
 </head>
 <body>
+
 <div class="container">
     <h2>Auto Ad System</h2>
     <button id="autoBtn" onclick="startAutoRefresh()">Auto Ads</button>
@@ -25,56 +26,55 @@
 </div>
 
 <!-- ================= AdCash Ads ================= -->
-<div class="ad-block">
-<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-<script type="text/javascript">
+<div class="ad-block" id="adcash-container">
+<script>
     aclib.runBanner({ zoneId: '10289610' });
     aclib.runInPagePush({ zoneId: '10289602', maxAds: 2 });
     aclib.runInterstitial({ zoneId: '10289594' });
     aclib.runPop({ zoneId: '10289582' });
     aclib.runAutoTag({ zoneId: '12mpnwugda' });
 </script>
-<div id="awn" class="ad-block"></div>
 </div>
 
 <!-- ================= AdSterra Ads ================= -->
 <div class="ad-block">
 <script type="text/javascript">
     atOptions = { 'key':'ef8217b410d73f26bf4e93118b120b81','format':'iframe','height':90,'width':728,'params':{} };
+    document.write('<scr'+'ipt type="text/javascript" src="//www.highperformanceformat.com/ef8217b410d73f26bf4e93118b120b81/invoke.js"></scr'+'ipt>');
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/ef8217b410d73f26bf4e93118b120b81/invoke.js"></script>
 </div>
 
 <div class="ad-block">
 <script type="text/javascript">
     atOptions = { 'key':'4581e2ba3d80dd56fa8f5e9c719e8e69','format':'iframe','height':60,'width':468,'params':{} };
+    document.write('<scr'+'ipt type="text/javascript" src="//www.highperformanceformat.com/4581e2ba3d80dd56fa8f5e9c719e8e69/invoke.js"></scr'+'ipt>');
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/4581e2ba3d80dd56fa8f5e9c719e8e69/invoke.js"></script>
-</div>
-
-<div class="ad-block">
-<script async="async" data-cfasync="false" src="//pl27428609.profitableratecpm.com/6f9bda2ab226eb49663e7663da59ee81/invoke.js"></script>
-<div id="container-6f9bda2ab226eb49663e7663da59ee81"></div>
 </div>
 
 <div class="ad-block">
 <script type="text/javascript">
     atOptions = { 'key':'3988852ddc2607499411d12416076938','format':'iframe','height':50,'width':320,'params':{} };
+    document.write('<scr'+'ipt type="text/javascript" src="//www.highperformanceformat.com/3988852ddc2607499411d12416076938/invoke.js"></scr'+'ipt>');
 </script>
-<script type="text/javascript" src="//www.highperformanceformat.com/3988852ddc2607499411d12416076938/invoke.js"></script>
+</div>
+
+<!-- ================= Profitableratecpm ================= -->
+<div class="ad-block">
+<script async src="//pl27428609.profitableratecpm.com/6f9bda2ab226eb49663e7663da59ee81/invoke.js"></script>
+<div id="container-6f9bda2ab226eb49663e7663da59ee81"></div>
 </div>
 
 <!-- ================= Auto Refresh Script ================= -->
 <script>
 let refreshActive = false;
-let countdown = 30; // পরিবর্তন করা হলো 30 সেকেন্ড
+let countdown = 30;
 let timerInterval;
 
 function startAutoRefresh(){
     if(refreshActive) return;
     refreshActive = true;
     document.getElementById("timer").style.display="block";
-    countdown=30; // পরিবর্তন করা হলো 30 সেকেন্ড
+    countdown=30;
     document.getElementById("count").textContent=countdown;
     timerInterval=setInterval(()=>{
         countdown--;
@@ -106,10 +106,9 @@ window.onload = function(){
 function showGigaAd(){
     const container = document.getElementById("giga-container");
     if(container && window.showGiga){
-        container.innerHTML = ''; 
+        container.innerHTML = '';
         window.showGiga({container: container})
         .then(adInstance => {
-            // ৫ সেকেন্ড পরে অটো-ক্লোজ
             setTimeout(() => {
                 container.innerHTML = '';
                 if(adInstance && adInstance.close) adInstance.close();
@@ -119,16 +118,15 @@ function showGigaAd(){
     }
 }
 
-// পেজ লোড হওয়ার ১৫ সেকেন্ড পর প্রথম এড শো হবে
 window.addEventListener("load", () => {
     setTimeout(() => {
         showGigaAd();
-        // এরপর প্রতি ১৫ সেকেন্ড পর নতুন এড শো হবে
         setInterval(showGigaAd, 15000);
     }, 15000);
 });
 </script>
 
+<script async src='//pl23792003.profitableratecpm.com/ac/f5/22/acf5224742b437f1b5583daa1d967138.js'></script>
+
 </body>
-<script type='text/javascript' src='//pl23792003.profitableratecpm.com/ac/f5/22/acf5224742b437f1b5583daa1d967138.js'></script>
 </html>
