@@ -3,36 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Auto Ad Page</title>
+  <title>Combined Auto Ad Page</title>
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
   <style>
-    body { font-family: sans-serif; background: #f3f4f6; text-align: center; padding: 20px; margin: 0; }
-    .container { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 420px; margin: 20px auto; }
-    h2 { margin-bottom: 20px; }
-    button { width: 100%; padding: 15px; margin: 10px 0; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; color: white; }
-    #autoBtn { background: #2563eb; }
-    #stopBtn { background: linear-gradient(to right, #ff416c, #ff4b2b); }
-    #timer { font-size: 18px; margin-top: 15px; display: none; }
-    .ad-block { margin: 20px auto; }
+    body {
+      font-family: sans-serif;
+      background: #f3f4f6;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      max-width: 420px;
+      margin: 20px auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+    }
+
+    #autoBtn {
+      background: #2563eb;
+    }
+
+    #stopBtn {
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
+    }
+
+    #timer {
+      font-size: 18px;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .ad-block {
+      margin: 20px auto;
+    }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Profitableratecpm 728x90 -->
+  <!-- ✅ AdSterra 728x90 Banner -->
   <div class="ad-block">
     <script type="text/javascript">
-      atOptions = { 'key':'ef8217b410d73f26bf4e93118b120b81', 'format':'iframe', 'height':90, 'width':728, 'params':{} };
+      atOptions = {
+        'key' : 'ef8217b410d73f26bf4e93118b120b81',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/ef8217b410d73f26bf4e93118b120b81/invoke.js"></script>
   </div>
 
-  <!-- ✅ AdSterra Banner -->
+  <!-- ✅ AdCash 728x90 Banner -->
   <div class="ad-block">
-    <script type="text/javascript" src="//adsterra.com/tracking.js"></script>
-    <!-- উদাহরণ: আপনার AdSterra Zone ID অনুযায়ী কোড কাস্টমাইজ করুন -->
     <script type="text/javascript">
-      var adsterra_zone_id = 1234567; // আপনার AdSterra Zone ID
-      (function(){ var s=document.createElement('script'); s.src='https://adsterra.com/zone_script.js?z='+adsterra_zone_id; document.body.appendChild(s); })();
+      aclib.runBanner({
+        zoneId: '10289610',
+      });
     </script>
   </div>
 
@@ -42,77 +88,104 @@
     <button id="stopBtn" onclick="stopAutoRefresh()">Stop Auto Ads</button>
     <div id="timer">Next refresh in <span id="count">30</span>s</div>
 
-    <!-- ✅ Profitableratecpm Native Banner -->
+    <!-- ✅ AdSterra Native Banner -->
     <div class="ad-block">
       <script async="async" data-cfasync="false" src="//pl27428609.profitableratecpm.com/6f9bda2ab226eb49663e7663da59ee81/invoke.js"></script>
       <div id="container-6f9bda2ab226eb49663e7663da59ee81"></div>
     </div>
 
-    <!-- ✅ Monetag Ads -->
-    <script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9725895,document.createElement('script'))</script>
-    <?php include_once (dirname(__FILE__) . '/pa_antiadblock_9725506.php'); ?>
-    <script src="https://upskittyan.com/act/files/tag.min.js?z=9725505" data-cfasync="false" async></script>
-    <script>(s=>{s.dataset.zone='9725499',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9725488,document.createElement('script'))</script>
-    <script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9725480,document.createElement('script'))</script>
-
+    <!-- ✅ AdCash Native Banner -->
+    <div id="awn" class="ad-block"></div>
+    <script data-cfasync="false" type="text/javascript">
+      var adcashMacros = {};
+      var zoneNativeSett = { container: "awn", baseUrl: "onclickalgo.com/script/native.php", r: [10289618] };
+      // AdCash নেটিভ স্ক্রিপ্ট এখানে একই থাকবে
+    </script>
   </div>
 
-  <!-- ✅ Profitableratecpm 468x60 -->
+  <!-- ✅ AdSterra 468x60 Banner -->
   <div class="ad-block">
     <script type="text/javascript">
-      atOptions = { 'key':'4581e2ba3d80dd56fa8f5e9c719e8e69', 'format':'iframe', 'height':60, 'width':468, 'params':{} };
+      atOptions = {
+        'key' : '4581e2ba3d80dd56fa8f5e9c719e8e69',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/4581e2ba3d80dd56fa8f5e9c719e8e69/invoke.js"></script>
   </div>
 
-  <!-- ✅ Profitableratecpm 320x50 -->
+  <!-- ✅ AdSterra 320x50 Banner -->
   <div class="ad-block">
     <script type="text/javascript">
-      atOptions = { 'key':'3988852ddc2607499411d12416076938', 'format':'iframe', 'height':50, 'width':320, 'params':{} };
+      atOptions = {
+        'key' : '3988852ddc2607499411d12416076938',
+        'format' : 'iframe',
+        'height' : 50,
+        'width' : 320,
+        'params' : {}
+      };
     </script>
     <script type="text/javascript" src="//www.highperformanceformat.com/3988852ddc2607499411d12416076938/invoke.js"></script>
   </div>
 
-  <!-- ✅ Adcash In-Page Push -->
+  <!-- ✅ AdCash In-Page Push Ads -->
   <script type="text/javascript">
-    aclib.runInPagePush({ zoneId: '10289602', maxAds: 2 });
+    aclib.runInPagePush({
+      zoneId: '10289602',
+      maxAds: 2,
+    });
   </script>
 
-  <!-- ✅ Adcash Pop-under -->
+  <!-- ✅ AdCash Pop-under -->
   <script type="text/javascript">
-    aclib.runPop({ zoneId: '10289582' });
+    aclib.runPop({
+      zoneId: '10289582',
+    });
   </script>
 
-  <!-- ✅ Adcash Interstitial -->
+  <!-- ✅ AdCash Interstitial Ads -->
   <script type="text/javascript">
-    aclib.runInterstitial({ zoneId: '10289594' });
+    aclib.runInterstitial({
+      zoneId: '10289594',
+    });
   </script>
 
-  <!-- ✅ Auto-refresh Script -->
   <script>
-    let refreshActive=false;
-    let countdown=30;
+    let refreshActive = false;
+    let countdown = 30;
     let timerInterval;
-    function startAutoRefresh(){
-      if(refreshActive)return;
-      refreshActive=true;
-      document.getElementById("timer").style.display="block";
-      countdown=30;
-      document.getElementById("count").textContent=countdown;
-      timerInterval=setInterval(()=>{
+
+    function startAutoRefresh() {
+      if (refreshActive) return;
+      refreshActive = true;
+      document.getElementById("timer").style.display = "block";
+      countdown = 30;
+      document.getElementById("count").textContent = countdown;
+
+      timerInterval = setInterval(() => {
         countdown--;
-        document.getElementById("count").textContent=countdown;
-        if(countdown<=0){clearInterval(timerInterval);location.reload();}
-      },1000);
+        document.getElementById("count").textContent = countdown;
+
+        if (countdown <= 0) {
+          clearInterval(timerInterval);
+          location.reload(); // Auto refresh
+        }
+      }, 1000);
     }
-    function stopAutoRefresh(){
-      refreshActive=false;
+
+    function stopAutoRefresh() {
+      refreshActive = false;
       clearInterval(timerInterval);
-      document.getElementById("timer").style.display="none";
+      document.getElementById("timer").style.display = "none";
     }
-    window.onload=function(){
-      if(document.referrer.includes(window.location.hostname)){startAutoRefresh();}
+
+    window.onload = function () {
+      if (document.referrer.includes(window.location.hostname)) {
+        startAutoRefresh();
+      }
     }
   </script>
 
